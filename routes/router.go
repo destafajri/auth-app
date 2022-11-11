@@ -15,12 +15,12 @@ func Router() {
 	db.DBcon()
 	r := mux.NewRouter()
 
-	r.HandleFunc("/login", authentications.Login).Methods("POST")
-	r.HandleFunc("/register", authentications.Register).Methods("POST")
+	r.HandleFunc("/login", authentications.Login).Methods(http.MethodPost)
+	r.HandleFunc("/register", authentications.Register).Methods(http.MethodPost)
 
 	api := r.PathPrefix("/api").Subrouter()
-	api.HandleFunc("/products", products.Index).Methods("GET")
 	api.Use(middlewares.JWTMiddleware)
+	api.HandleFunc("/products", products.Index).Methods(http.MethodGet)
 
-	log.Fatal(http.ListenAndServe(":8080", r))
+	log.Fatal(http.ListenAndServe(":9000", r))
 }
