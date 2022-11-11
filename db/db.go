@@ -23,7 +23,6 @@ func DBcon() *sql.DB{
 		fmt.Println("Error connection")
 		panic(err)
 	}
-	defer db.Close()
 
 	err = db.Ping()
 	if err != nil {

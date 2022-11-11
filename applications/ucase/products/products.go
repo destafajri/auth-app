@@ -3,27 +3,23 @@ package products
 import (
 	"net/http"
 
-	"github.com/destafajri/auth-app/applications/helper"
+	"github.com/destafajri/auth-app/applications/repository"
+	"github.com/gin-gonic/gin"
 )
 
-func Index(w http.ResponseWriter, r *http.Request) {
-	data := []map[string]interface{}{
-		{
-			"id":           1,
-			"nama_product": "Iphone 14",
-			"stok":         1000,
-		},
-		{
-			"id":           2,
-			"nama_product": "Ipad Air 20",
-			"stok":         10000,
-		},
-		{
-			"id":           3,
-			"nama_product": "Ipad Air 500",
-			"stok":         500,
-		},
-	}
+type welcomeHandler struct{
+	root repository.UserInterface
+}
 
-	helper.ResponseJSON(w, http.StatusOK, data)
+func NewWelcomeMessage(root repository.UserInterface) *welcomeHandler{
+	return &welcomeHandler{
+		root,
+	}
+}
+
+func (handler *welcomeHandler)WelcomeHandler(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"name" : "Desta",
+		"status" : "Welcome to My API with Golang-Gin Library",
+	})
 }

@@ -1,26 +1,31 @@
 package routes
 
 import (
-	"log"
-	"net/http"
-
-	"github.com/destafajri/auth-app/applications/middlewares"
+	"github.com/destafajri/auth-app/applications/repository"
 	"github.com/destafajri/auth-app/applications/ucase/authentications"
 	"github.com/destafajri/auth-app/applications/ucase/products"
 	"github.com/destafajri/auth-app/db"
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
 )
 
 func Router() {
-	db.DBcon()
-	r := mux.NewRouter()
+	db:= db.DBcon()
 
-	r.HandleFunc("/login", authentications.Login).Methods(http.MethodPost)
-	r.HandleFunc("/register", authentications.Register).Methods(http.MethodPost)
+	//Repository
+	userRepository := repository.NewUser(db)
+	//Ucase
+	register := authentications.NewRegisterUser(userRepository)
+	product := products.NewWelcomeMessage(userRepository)
 
-	api := r.PathPrefix("/api").Subrouter()
-	api.Use(middlewares.JWTMiddleware)
-	api.HandleFunc("/products", products.Index).Methods(http.MethodGet)
+	//router default setting
+	router := gin.Default()
+	//versioning api
+	api := router.Group("/api").Use()
 
-	log.Fatal(http.ListenAndServe(":9000", r))
+	//router path
+	router.POST("/register", register.RegisterHandler )
+	//api path for root request
+	api.GET("/products", product.WelcomeHandler)
+	
+	router.Run(":9000")
 }
