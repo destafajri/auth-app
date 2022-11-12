@@ -32,6 +32,7 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		// assign role
 		helpermiddleware.ROLE = claims.Role
+		helpermiddleware.CLAIMS = *claims 
 		
 		c.Next()
 	}

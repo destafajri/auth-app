@@ -24,8 +24,9 @@ func (handler *welcomeHandler)WelcomeHandler(c *gin.Context) {
 		return
 	}
 
+	res := helpermiddleware.CLAIMS
+
 	c.JSON(http.StatusOK, gin.H{
-		"name" : "Desta",
-		"status" : "Welcome to My API with Golang-Gin Library",
+		"JWT_CLAIMS_INFO" : res,
 	})
 }
