@@ -14,7 +14,7 @@ docker-compose up -d
 ```
 - add .env file to setup your database connection
 ```
-POSTGRES_URL="user=postgres password=[your-password] host=db.jibsjolwzprifvhwbawn.supabase.co port=5432 dbname=postgres"
+POSTGRES_URL="user=postgres password=[your-password] host=[your-host] port=5432 dbname=postgres"
 KEY_JWT="[type your secret key here]"
 ```
 - run the golang server
