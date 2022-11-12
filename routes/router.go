@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"github.com/destafajri/auth-app/applications/middlewares"
 	"github.com/destafajri/auth-app/applications/repository"
 	"github.com/destafajri/auth-app/applications/ucase/authentications"
 	"github.com/destafajri/auth-app/applications/ucase/products"
@@ -25,7 +26,7 @@ func Router() {
 	api := router.Group("/api")
 
 	//middleware api
-	api.Use()
+	api.Use(middlewares.AuthMiddleware())
 
 	//router path
 	router.POST("/register", register.RegisterHandler)

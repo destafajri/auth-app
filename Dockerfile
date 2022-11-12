@@ -10,6 +10,7 @@ WORKDIR /app
 COPY . .
 EXPOSE 9000
 RUN go mod tidy
+RUN go build
 CMD go run main.go
 
 # ... the rest of the Dockerfile is ...
