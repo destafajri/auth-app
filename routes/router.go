@@ -1,26 +1,39 @@
 package routes
 
 import (
-	"log"
-	"net/http"
-
 	"github.com/destafajri/auth-app/applications/middlewares"
+	"github.com/destafajri/auth-app/applications/repository"
 	"github.com/destafajri/auth-app/applications/ucase/authentications"
 	"github.com/destafajri/auth-app/applications/ucase/products"
 	"github.com/destafajri/auth-app/db"
-	"github.com/gorilla/mux"
+	"github.com/gin-gonic/gin"
 )
 
 func Router() {
-	db.DBcon()
-	r := mux.NewRouter()
+	db:= db.DBcon()
 
-	r.HandleFunc("/login", authentications.Login).Methods("POST")
-	r.HandleFunc("/register", authentications.Register).Methods("POST")
+	//Repository
+	userRepository := repository.NewUser(db)
+	//Ucase
+	register := authentications.NewRegisterUser(userRepository)
+	remindme := authentications.NewRemindUser(userRepository)
+	login := authentications.NewLoginUser(userRepository)
+	product := products.NewWelcomeMessage(userRepository)
 
-	api := r.PathPrefix("/api").Subrouter()
-	api.HandleFunc("/products", products.Index).Methods("GET")
-	api.Use(middlewares.JWTMiddleware)
+	//router default setting
+	router := gin.Default()
+	//versioning api
+	api := router.Group("/api")
 
-	log.Fatal(http.ListenAndServe(":8080", r))
+	//middleware api
+	api.Use(middlewares.AuthMiddleware())
+
+	//router path
+	router.POST("/register", register.RegisterHandler)
+	router.POST("/remindme", remindme.Remindme)
+	router.POST("/login", login.Login)
+	//api path for root request
+	api.GET("/products", product.WelcomeHandler)
+	
+	router.Run("0.0.0.0:9000")
 }

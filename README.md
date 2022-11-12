@@ -13,3 +13,5 @@ docker-compose up
 ```
 go run main.go
 ```
+## Postman API-Doc
+https://documenter.getpostman.com/view/22138766/2s8YerPCyM
