@@ -1,15 +1,23 @@
 # Simple Auth-app API Golang Postgres
 
-Auth API Golang dengan database PostgreSql
+Simple Authentication and Middlewares API Golang with PostgreSql for database and gin-gionic for the router
 
 ## How to use
-- Silahkan download repo ini.
-- Siapkan database postgres, atau bisa pakai docker, tinggal jalankan perintah
+- Please clone or download this repository.
+- Prepare postgres database, or use docker, you can type
 ```
 docker-compose up
 ```
-- Ubah pada env file sesuai settingan kalian
-- jalankan perintah server golangnya
+OR
+```
+docker-compose up -d
+```
+- add .env file to setup your database connection
+```
+POSTGRES_URL="user=postgres password=[your-password] host=db.jibsjolwzprifvhwbawn.supabase.co port=5432 dbname=postgres"
+KEY_JWT="[type your secret key here]"
+```
+- run the golang server
 ```
 go run main.go
 ```
