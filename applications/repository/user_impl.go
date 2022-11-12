@@ -38,3 +38,24 @@ func(user userImplementation) Register(users *entity.UserEntity) error{
 
 	return nil
 }
+
+func(user userImplementation) Remindme(phone string) (*entity.UserEntity, error){
+	var users entity.UserEntity
+	query := `SELECT id, name, phone, role, password FROM users where phone=$1`
+	
+	err := user.db.QueryRow(query, phone).Scan(
+		&users.ID,
+		&users.Name,
+		&users.Phone,
+		&users.Role,
+		&users.Password,
+	)
+	if err != nil {
+		err = fmt.Errorf("executing query: %w", err)
+		fmt.Println("error eksekusi query")
+		fmt.Println(err)
+		return nil, err
+	}
+
+	return &users, nil
+}

@@ -40,7 +40,7 @@ func(r registerUser)RegisterHandler(c *gin.Context) {
 	//validation input phone number
 	phone := validations.Phonenumber(payload.Phone)
 	if !phone {
-		c.JSON(http.StatusBadRequest, gin.H{
+		c.JSON(http.StatusUnprocessableEntity, gin.H{
 			"errors" : "Invalid Phone Number Format",
 		})
 		return

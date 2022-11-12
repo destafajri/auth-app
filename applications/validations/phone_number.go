@@ -9,7 +9,7 @@ import (
 
 func Phonenumber(input string) bool {
 	if len([]rune(input)) < 9 {
-		fmt.Println("phone number length")
+		fmt.Println("phone number length shoul be more than 9 digits")
 		return false
 	}
 	

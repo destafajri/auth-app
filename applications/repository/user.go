@@ -6,4 +6,5 @@ import (
 
 type UserInterface interface {
 	Register(*entity.UserEntity) error
+	Remindme(string)(*entity.UserEntity, error)
 }

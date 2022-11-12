@@ -15,6 +15,7 @@ func Router() {
 	userRepository := repository.NewUser(db)
 	//Ucase
 	register := authentications.NewRegisterUser(userRepository)
+	remindme := authentications.NewRemindUser(userRepository)
 	product := products.NewWelcomeMessage(userRepository)
 
 	//router default setting
@@ -23,7 +24,8 @@ func Router() {
 	api := router.Group("/api").Use()
 
 	//router path
-	router.POST("/register", register.RegisterHandler )
+	router.POST("/register", register.RegisterHandler)
+	router.POST("/remindme", remindme.Remindme)
 	//api path for root request
 	api.GET("/products", product.WelcomeHandler)
 	
