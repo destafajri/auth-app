@@ -23,17 +23,17 @@ CMD go run main.go
 # ...   omitted from this example   ...
 
 # Start a new stage from scratch
-FROM alpine:latest
-RUN apk --no-cache add ca-certificates
+# FROM alpine:latest
+# RUN apk --no-cache add ca-certificates
 
-WORKDIR /root/
+# WORKDIR /root/
 
-# Copy the Pre-built binary file from the previous stage. Observe we also copied the .env file
-COPY --from=builder $GOPATH/src/auth-app/main .
-COPY --from=builder $GOPATH/src/auth-app/.env .       
+# # Copy the Pre-built binary file from the previous stage. Observe we also copied the .env file
+# COPY --from=builder $GOPATH/src/auth-app/main .
+# COPY --from=builder $GOPATH/src/auth-app/.env .       
 
-# Expose port 8080 to the outside world
-EXPOSE 9000
+# # Expose port 9000 to the outside world
+# EXPOSE 9000
 
-#Command to run the executable
-CMD ["./main"]
+# #Command to run the executable
+# CMD ["./main"]
