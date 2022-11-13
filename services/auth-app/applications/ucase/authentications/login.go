@@ -34,6 +34,9 @@ func(log loginUser) Login(c *gin.Context){
 
 	us, err := log.login.Login(payload.Phone)
 	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"errors" : err,
+		})
 		return
 	}
 

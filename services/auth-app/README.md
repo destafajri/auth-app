@@ -1,6 +1,6 @@
-# Simple Mono-Repo-app API Golang Postgres
+# Simple Auth-app API Golang Postgres
 
-Simple Auth-app and Fetch-app API Golang with PostgreSql and gin-gionic
+Simple Authentication and Middlewares API Golang with PostgreSql for database and gin-gionic for the router
 
 ## How to use
 - Please clone or download this repository.
@@ -22,3 +22,4 @@ KEY_JWT="[type your secret key here]"
 go run main.go
 ```
 ## Postman API-Doc
+https://documenter.getpostman.com/view/22138766/2s8YerPCyM
