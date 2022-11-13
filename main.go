@@ -1,7 +1,10 @@
 package main
 
-import "github.com/destafajri/auth-app/routes"
-
+import (
+	auth "github.com/destafajri/auth-app/routes"
+	fetch "github.com/destafajri/fetch-app/routes"
+)
 func main() {
-	routes.Router()
+	auth.Router()
+	fetch.Router()
 }

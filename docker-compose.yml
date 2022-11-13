@@ -20,10 +20,5 @@ services:
       - default
     ports:
     - "9000:9000"
-  # fetch-app-service:
-  #   network_mode: host
-  #   image: ":latest"
-  #   volumes:
-  #     - ${PWD}/services/fetch-app-service/.env:/root/services/fetch-app-service/.env
 volumes:
   data:
