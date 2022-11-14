@@ -22,13 +22,10 @@ func NewGetFetchData(root repository.FetchInterface) *getFetchHandler{
 func (handler *getFetchHandler)FetchDataHandler(c *gin.Context) {
 	// middleware
 	if helpermiddleware.ROLE == ""{
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"msg"	: "Unauthorized",
-		})
 		return
 	}
 
 	response := helper.Resource()
-
+	
 	c.JSON(http.StatusOK, response)
 }

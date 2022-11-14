@@ -8,7 +8,13 @@ require (
 	github.com/lib/pq v1.10.7
 )
 
-require github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+require (
+	github.com/bitly/go-simplejson v0.5.0 // indirect
+	github.com/disiqueira/gocurrency v0.0.0-20170319121158-085df9aea731 // indirect
+	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+	github.com/peterhellberg/fixer v0.0.0-20200418093135-041235e093a1 // indirect
+	github.com/shopspring/decimal v1.3.1 // indirect
+)
 
 require (
 	github.com/destafajri/auth-app v0.0.0-20221112180729-ea0d0f0d7145
@@ -20,6 +26,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/me-io/go-swap v0.0.0-20181003190758-b8d825d1873d
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
