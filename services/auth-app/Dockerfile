@@ -10,7 +10,7 @@ LABEL maintainer="Desta <destafajri@gmail.com>"
 # Git is required for fetching the dependencies.
 RUN apk update && apk add --no-cache git
 
-WORKDIR $GOPATH/src/auth-app
+WORKDIR /app
 
 # Download necessary Go modules
 COPY . .

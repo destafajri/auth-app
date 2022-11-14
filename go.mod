@@ -2,25 +2,24 @@ module github.com/destafajri/mono-repo-app
 
 go 1.19
 
-require (
-	github.com/destafajri/auth-app v0.0.0-20221112180729-ea0d0f0d7145
-	github.com/gin-gonic/gin v1.8.1
-	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
-	github.com/golang-jwt/jwt/v4 v4.4.2
-	github.com/google/uuid v1.3.0
-	github.com/joho/godotenv v1.4.0
-	github.com/lib/pq v1.10.7
-)
+require github.com/destafajri/auth-app v0.0.0-20221112180729-ea0d0f0d7145
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
+	github.com/destafajri/fetch-app v0.0.0-20221114050853-72d065858bef // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/gin-gonic/gin v1.8.1 // indirect
+	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-playground/validator/v10 v10.10.0 // indirect
 	github.com/goccy/go-json v0.9.7 // indirect
+	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+	github.com/google/uuid v1.3.0 // indirect
+	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/lib/pq v1.10.7 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect

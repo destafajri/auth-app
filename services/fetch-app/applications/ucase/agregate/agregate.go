@@ -1,4 +1,4 @@
-package fetch
+package agregate
 
 import (
 	"net/http"
@@ -9,21 +9,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type getFetchHandler struct{
+type getAgregateHandler struct{
 	root repository.FetchInterface
 }
 
-func NewGetFetchData(root repository.FetchInterface) *getFetchHandler{
-	return &getFetchHandler{
+func NewGetAgregateData(root repository.FetchInterface) *getAgregateHandler{
+	return &getAgregateHandler{
 		root,
 	}
 }
 
-func (handler *getFetchHandler)FetchDataHandler(c *gin.Context) {
+func (handler *getAgregateHandler)AgregateDataHandler(c *gin.Context) {
 	// middleware
-	if middlewares.ROLE == ""{
+	if middlewares.ROLE != "admin"{
 		c.JSON(http.StatusUnauthorized, gin.H{
-			"messsage": "Unauthorized as member",
+			"messsage": "Unauthorized as Admin",
 		})
 		return
 	}

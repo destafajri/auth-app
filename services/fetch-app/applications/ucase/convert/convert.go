@@ -3,7 +3,7 @@ package convert
 import (
 	"net/http"
 
-	helpermiddleware "github.com/destafajri/auth-app/applications/middlewares/helperMiddleware"
+	"github.com/destafajri/fetch-app/applications/middlewares"
 	"github.com/destafajri/fetch-app/applications/helper"
 	"github.com/destafajri/fetch-app/applications/repository"
 	"github.com/gin-gonic/gin"
@@ -33,7 +33,10 @@ func (handler *getCurrencyHandler) CurrencyDataHandler(c *gin.Context) {
 	}
 
 	// middleware
-	if helpermiddleware.ROLE == "" {
+	if middlewares.ROLE == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"messsage": "Unauthorized as member",
+		})
 		return
 	}
 

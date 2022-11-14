@@ -6,11 +6,7 @@ Simple Fetch-app API with Golang and gin-gionic
 - Please clone or download this repository.
 - Prepare postgres database, or use docker, you can type
 ```
-docker-compose up
-```
-OR
-```
-docker-compose up -d
+docker-build --tag fetch:fetch .
 ```
 - add .env file to setup your database connection
 ```
@@ -40,3 +36,4 @@ type ResponseFetch struct {
 go run main.go
 ```
 ## Postman API-Doc
+https://documenter.getpostman.com/view/22138766/2s8YevqAyE

@@ -10,11 +10,11 @@ LABEL maintainer="Desta <destafajri@gmail.com>"
 # Git is required for fetching the dependencies.
 RUN apk update && apk add --no-cache git
 
-WORKDIR $GOPATH/src/fetch-app
+WORKDIR /app
 
 # Download necessary Go modules
 COPY . .
-EXPOSE 9000
+EXPOSE 9001
 RUN go mod tidy
 RUN go build
 CMD go run main.go

@@ -6,6 +6,10 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/destafajri/auth-app v0.0.0-20221112180729-ea0d0f0d7145 h1:YZJJ3nVVC4JUxxzhegIdXD2hqmafIn7OZnrMV8Psiwk=
 github.com/destafajri/auth-app v0.0.0-20221112180729-ea0d0f0d7145/go.mod h1:BkMr7HQt57uCBD5VPoAlDsoDv9XO3eDmw/NyAkrGBa0=
+github.com/destafajri/fetch-app v0.0.0-20221114050340-e6f1394ae518 h1:trN6c7mWMrdE7tF0mVQHWmDW1YFuPuFvmc7pvi9M5IY=
+github.com/destafajri/fetch-app v0.0.0-20221114050340-e6f1394ae518/go.mod h1:eoweU50khjmcrQwtc7mfEVOK3zoYhhcsWJT9o9IFe1k=
+github.com/destafajri/fetch-app v0.0.0-20221114050853-72d065858bef h1:pB/mkQ9uEcBd9Zb3Pzwocf9N8lnYZNKxiCFmqYqJzko=
+github.com/destafajri/fetch-app v0.0.0-20221114050853-72d065858bef/go.mod h1:eoweU50khjmcrQwtc7mfEVOK3zoYhhcsWJT9o9IFe1k=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
 github.com/gin-gonic/gin v1.8.1 h1:4+fr/el88TOO3ewCmQr8cx/CtZ/umlIRIs5M4NTNjf8=

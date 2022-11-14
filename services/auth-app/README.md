@@ -6,11 +6,7 @@ Simple Authentication and Middlewares API Golang with PostgreSql for database an
 - Please clone or download this repository.
 - Prepare postgres database, or use docker, you can type
 ```
-docker-compose up
-```
-OR
-```
-docker-compose up -d
+docker build --tag auth:auth .
 ```
 - add .env file to setup your database connection
 ```

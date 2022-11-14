@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	_ "os"
+	"os"
 )
 
 func ConvertCurrency(s string) (ResponseCurrency, error){
@@ -17,7 +17,7 @@ func ConvertCurrency(s string) (ResponseCurrency, error){
   client := &http.Client {}
   req, err := http.NewRequest("GET", url, nil)
 
-  req.Header.Set("apikey", "A2opb4tv15E1mVxKKi4idho6TRDSV95F")
+  req.Header.Set("apikey", os.Getenv("API_KEY"))
 
   if err != nil {
     fmt.Println(err)

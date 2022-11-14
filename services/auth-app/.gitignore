@@ -4,3 +4,5 @@
 # Editor
 .idea
 .vscode
+
+main.go

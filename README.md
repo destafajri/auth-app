@@ -22,3 +22,8 @@ KEY_JWT="[type your secret key here]"
 go run main.go
 ```
 ## Postman API-Doc
+# Auth-app
+https://documenter.getpostman.com/view/22138766/2s8YerPCyM
+# Fetch-app
+https://documenter.getpostman.com/view/22138766/2s8YevqAyE
+
