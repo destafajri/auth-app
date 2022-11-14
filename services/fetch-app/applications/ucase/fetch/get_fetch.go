@@ -3,6 +3,7 @@ package fetch
 import (
 	"net/http"
 
+	helpermiddleware "github.com/destafajri/auth-app/applications/middlewares/helperMiddleware"
 	"github.com/destafajri/fetch-app/applications/helper"
 	"github.com/destafajri/fetch-app/applications/repository"
 	"github.com/gin-gonic/gin"
@@ -19,10 +20,13 @@ func NewGetFetchData(root repository.FetchInterface) *getFetchHandler{
 }
 
 func (handler *getFetchHandler)FetchDataHandler(c *gin.Context) {
-	//middleware
-	// if helpermiddleware.ROLE == "admin"{
-	// 	return
-	// }
+	// middleware
+	if helpermiddleware.ROLE == ""{
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"msg"	: "Unauthorized",
+		})
+		return
+	}
 
 	response := helper.Resource()
 

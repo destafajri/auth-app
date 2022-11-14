@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"github.com/destafajri/auth-app/applications/middlewares"
 	"github.com/destafajri/fetch-app/applications/repository"
 	"github.com/destafajri/fetch-app/applications/ucase/fetch"
 	"github.com/destafajri/fetch-app/db"
@@ -22,7 +23,7 @@ func Router() {
 	api := router.Group("/api")
 	
 	//middleware api
-	api.Use()
+	api.Use(middlewares.AuthMiddleware())
 
 	//end point
 	api.GET("/fetch", getFetchData.FetchDataHandler)

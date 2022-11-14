@@ -8,7 +8,10 @@ require (
 	github.com/lib/pq v1.10.7
 )
 
+require github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+
 require (
+	github.com/destafajri/auth-app v0.0.0-20221112180729-ea0d0f0d7145
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
